@@ -1,101 +1,94 @@
 # Arquitetura do Sistema — TalentoReal IA
 
 ## Objetivo
+
 Definir a arquitetura técnica do TalentoReal IA (MVP e evolução), garantindo:
-- validação de talentos por provas reais
-- antifraude em vagas e perfis
-- matching inteligente entre candidato e empresa
-- trilhas de formação com reavaliação e score
+
+- Validação de talentos por provas reais  
+- Sistema antifraude em CVs, contas e perfis  
+- Correspondência inteligente (Matching) entre talento e empresa  
+- Escalabilidade para crescimento em África e globalmente  
+- Segurança, integridade e confiança dos dados  
 
 ---
 
-## Visão Geral (alto nível)
+## Visão Geral da Arquitetura
 
-**Clientes (Front-end)**
-- Web App (MVP): Next.js / React
-- Mobile (futuro): React Native ou Flutter
+O TalentoReal IA é uma plataforma **Web + Mobile + IA Central**, composta por três camadas principais:
 
-**Back-end**
-- Firebase (MVP): Auth + Firestore + Storage
-- Cloud Functions: lógica sensível (validação, score, antifraude)
-- API de IA: módulo de IA (serviço interno) para análises e recomendações
+1. **Frontend (Interface do Utilizador)**
+   - Aplicação Web
+   - Aplicação Mobile
+   - Dashboard de empresas
+   - Painel de administração
 
-**Dados**
-- Firestore (dados operacionais)
-- Storage (documentos/provas: PDFs, imagens, portfólios)
-- Logs/telemetria (auditoria antifraude)
+2. **Backend (Lógica do Sistema)**
+   - API central
+   - Autenticação e gestão de utilizadores
+   - Motor de validação de provas
+   - Sistema antifraude
+   - Motor de matching inteligente
+   - Gestão de vagas e candidaturas
 
----
-
-## Componentes do MVP (Fase 1)
-
-### 1) Autenticação e Perfis
-- Perfis: Profissional / Empresa / Formação
-- Login: email/senha + (opcional) Google
-- Regras: verificação de email, proteção contra abuso
-
-### 2) Gestão de Vagas (Empresas)
-- Criar/editar/publicar vaga
-- Campos mínimos: título, local, tipo, salário (se aplicável), requisitos, etapas
-- Estado da vaga: rascunho → publicada → suspensa → encerrada
-
-### 3) Provas e Validação (Profissionais)
-- Upload de provas: certificados, experiência, portfólio, links
-- Micro-testes por área (níveis 1–6)
-- Status do perfil: incompleto → em validação → validado
-
-### 4) Antifraude (núcleo)
-- Detecção de inconsistências: datas, duplicações, padrões suspeitos
-- Verificação mínima: email + histórico de ações + reputação
-- Flags de risco: baixo / médio / alto
-- Auditoria: registo de eventos importantes (logs)
-
-### 5) Score do Talento
-- Score composto (0–100) baseado em:
-  - provas (peso maior)
-  - micro-testes
-  - consistência/antifraude
-  - feedback de entrevistas (futuro)
-- Score gera nível: 1 a 6
-
-### 6) Matching Inteligente
-- Matching inicial por regras:
-  - profissão/área, localização, nível/score, skills
-- Matching evoluído (IA):
-  - ranking por relevância e risco baixo
-  - explicação do porquê do match (transparência)
-
-### 7) Formação (Evolução)
-- IA identifica lacunas (skills faltando)
-- Recomenda trilhas
-- Reavalia e atualiza score
+3. **Camada de Inteligência Artificial**
+   - Análise de competências reais
+   - Deteção de fraude e inconsistências
+   - Geração de Score de Talento
+   - Matching inteligente entre candidatos e empresas
+   - Recomendações de melhoria de perfil
 
 ---
 
-## Segurança e Boas Práticas
-- Firestore Security Rules por tipo de perfil
-- Cloud Functions para:
-  - cálculo de score
-  - antifraude
-  - validações sensíveis
-- Proteção contra spam:
-  - limite de uploads
-  - limite de criação de vagas por dia (MVP)
-- Privacidade:
-  - provas visíveis apenas quando necessário
-  - consentimento para partilha com empresas
+## Componentes Técnicos
+
+### Frontend
+- Web App (Interface do utilizador)
+- Mobile App (Android / iOS)
+- Interface responsiva
+- Experiência centrada no utilizador
+
+### Backend
+- API segura
+- Gestão de autenticação
+- Base de dados estruturada
+- Processamento de provas
+- Sistema antifraude
+- Sistema de pontuação (Score)
+
+### Inteligência Artificial
+- Validação automática de competências
+- Deteção de padrões fraudulentos
+- Sistema de reputação e confiança
+- Matching inteligente talento ↔ empresa
+- Aprendizagem contínua do sistema
 
 ---
 
-## Roadmap técnico (resumo)
-- Fase 1: MVP (Auth + Perfis + Vagas + Provas + Score básico + Matching simples)
-- Fase 2: Antifraude forte + IA de recomendação + dashboards
-- Fase 3: Mobile + integrações + parcerias + escala
+## Segurança
+
+O sistema garante:
+
+- Proteção de dados dos utilizadores
+- Integridade das provas submetidas
+- Prevenção de fraude e perfis falsos
+- Sistema de confiança e reputação
+- Controlo de acesso seguro
 
 ---
 
-## Tecnologias recomendadas (MVP)
-- Front-end: Next.js (React)
-- Back-end: Firebase (Auth, Firestore, Storage)
-- Lógica: Cloud Functions (Node.js/TS)
-- IA: módulo de IA (OpenAI/LLM + regras) com logs e explicabilidade
+## Escalabilidade
+
+A arquitetura foi desenhada para:
+
+- Crescimento progressivo
+- Suporte a milhões de utilizadores
+- Expansão por países
+- Integração com novas tecnologias
+- Evolução contínua da IA
+
+---
+
+## Estado Atual
+
+Arquitetura definida para fase MVP.  
+Sistema em desenvolvimento e evolução contínua.
