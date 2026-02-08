@@ -1,4 +1,7 @@
 # Modelo de Dados — TalentoReal IA
+## Diagrama do Modelo de Dados
+
+![ERD TalentoReal IA](ERD_TalentoRealIA.png)
 
 ## Objetivo
 
@@ -148,6 +151,3 @@ Estrutura pronta para implementação técnica.
 ## Diagrama de Entidades (ERD)
 
 O diagrama abaixo representa a estrutura lógica de dados do sistema TalentoReal IA, incluindo utilizadores, perfis, empresas, provas, antifraude, pontuação de talento e motor de correspondência.
-## Diagrama do Modelo de Dados
-
-![ERD TalentoReal IA](ERD_TalentoRealIA.png)
