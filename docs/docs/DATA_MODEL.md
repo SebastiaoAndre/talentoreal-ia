@@ -1,7 +1,7 @@
 # Modelo de Dados — TalentoReal IA
 ## Diagrama do Modelo de Dados
 
-![ERD TalentoReal IA](ERD_TalentoRealIA.png)
+![ERD TalentoReal IA](./ERD_TalentoRealIA.png)
 
 ## Objetivo
 
