@@ -149,5 +149,4 @@ Estrutura pronta para implementação técnica.
 
 O diagrama abaixo representa a estrutura lógica de dados do sistema TalentoReal IA, incluindo utilizadores, perfis, empresas, provas, antifraude, pontuação de talento e motor de correspondência.
 
-![ERD TalentoReal IA](./documentos/ERD_TalentoRealIA.png)
-
+![ERD TalentoReal IA](../ERD_TalentoRealIA.png)
